@@ -1,0 +1,33 @@
+<<<<<<< HEAD
+<button (click)="goToCreateTask()">ADD TASK</button>
+<button (click)="goToListTasks()">SHOW TASKS</button>
+<br><br>
+
+=======
+<nav class="navbar" style="background-color: indigo">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Angular Routing</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a routerLink="/CreateTask">Create Tasks</a></li>
+                <li><a routerLink="/ShowTask">Show Tasks</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<h1> Welcome to Crud App</h1><br><br>
+<h3>Create task according to priority</h3><br><br>
+
+<!--<!<a routerLink="/CreateTask">Create Task</a>-->
+<!--<a routerLink="/ShowTask">Show Task</a>-->
+>>>>>>> Final Commit
+<router-outlet></router-outlet>
