@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 import {Task} from '../task'
 
 @Component({
-  moduleId:module.id,
+  moduleId: module.id,
   selector :'ShowTask',
   templateUrl: './showTask.component.html'
 })

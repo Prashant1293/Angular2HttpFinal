@@ -15,7 +15,7 @@ export class ListTaskComponent implements OnInit{
 
   ngOnInit() {
     this.service.getData().subscribe(data => {
-      this.tasks = [{date:'asas', title:'asas', description:'', priority:''}];
+      this.tasks = [{ _id:'1', date:'12-12-1993', title:'asas', description:'', priority:''}];
       alert(JSON.stringify(this.tasks[0]))
 
     }, error => {

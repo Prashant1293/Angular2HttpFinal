@@ -1,26 +1,37 @@
-<div style="background-color:aliceblue">
-<h1> create Task here</h1><br>
-<form class="container">
-  <label>id </label>
-  <input type="number" required #id
-         [(ngModel)]="task._id"  name="taskId" placeholder="taskId"><br/><br/>
-  <label>date</label>
-  <input type="date" [(ngModel)]="task.date" name="date"><br/><br/>
-  <label> Title</label>
-  <input type="text" [(ngModel)]="task.title" name="taskTitle" placeholder="TaskTitle"><br/><br/>
-  <label>task Description</label>
-  <input type="text" [(ngModel)]="task.description"  name="taskDescription" placeholder="Description"><br/><br/>
-  <label>priority</label>
-  <select name="drop" required #dropDown
-          [(ngModel)]="task.priority" class="selectpicker">
-    <option value="" disabled selected>Select your Priority</option>
-    <option value="low">Low</option>
-    <option value="medium">Medium</option>
-    <option value="high">High</option>
-  </select>  <br/><br/><br/>
-  <input  type="button" style="margin-left: 4em"
-         (click)="addTask()" value="Add"/>
+<div class="container">
+  <h1 style="color:#4a0263"> Create Task </h1><br>
+  <form class="container form-horizontal">
+    <label class="control-label col-sm-2">Task-Id:</label>
+
+    <input type="number" class="form-control" required #id
+           [(ngModel)]="task._id"  name="taskId" placeholder="Unique-TaskId"><br/><br/>
+
+    <label class="control-label col-sm-2">Date:</label>
+
+    <input type="date" class="form-control" [(ngModel)]="task.date" name="date"><br/><br/>
+
+    <label class="control-label col-sm-2"> Title:</label>
+
+    <input type="text" class="form-control" [(ngModel)]="task.title" name="taskTitle" placeholder="TaskTitle"><br/><br/>
+
+    <label class="control-label col-sm-2">Description:</label>
+
+    <input type="text" class="form-control" [(ngModel)]="task.description"  name="taskDescription" placeholder="Task Description">
+    <br/><br/>
+
+    <label class="control-label col-sm-2 ">Priority:</label>
+
+    <select name="drop" class="form-control " required #dropDown
+            [(ngModel)]="task.priority" class="selectpicker">
+      <option value="" disabled selected>Select your Priority</option>
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>  <br/><br/><br/>
+
+    <input  type="button" class="form-control col-sm-10" style="margin-left: 4em"
+            (click)="addTask()" class="btn-success" value="Add Task"/>
 
 
-</form>
+  </form>
 </div>
