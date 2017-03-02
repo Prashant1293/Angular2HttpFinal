@@ -53,17 +53,8 @@ describe('AppComponent', function () {
 
     it('should create ShowTaskComponent', () => expect(comp).toBeDefined());
 
-    it('it should be able to generate error in case of error for deleting task', () => {
-        spyOn(console, 'error');
-        spyOn(service, 'remove').and.returnValue(
-            Observable.throw(Error('Observable Error Occurs'))
-        );
-        comp.deleteByIndex(0);
-        expect(console.error).toHaveBeenCalled();
-    });
-
     it('it should be able to edit data from service', () => {
-        comp.editTask(0);
+        comp.editTask(0)
         router.navigate([]).then(data => {
             expect(data).toBe(true);
         })
@@ -71,12 +62,12 @@ describe('AppComponent', function () {
     });
 
     it('it should be able to generate error in case of error for ngOnInit', () => {
-        spyOn(console, 'error');
+        spyOn(window, 'alert');
         spyOn(service, 'getData').and.returnValue(
             Observable.throw(Error('Observable Error Occurs'))
         );
         comp.ngOnInit();
-        expect(console.error).toHaveBeenCalledWith(Error('Observable Error Occurs'));
+        expect(window.alert).toHaveBeenCalledWith(Error('Observable Error Occurs'));
     });
 
     it('it should be able to get data from service', () => {
@@ -100,4 +91,5 @@ describe('AppComponent', function () {
             _id: ''
         }])
     });
+
 });

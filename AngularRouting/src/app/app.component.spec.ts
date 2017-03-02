@@ -39,7 +39,4 @@ describe('AppComponent', function () {
 
   it('should create APP-component', () => expect(comp).toBeDefined() );
 
-
-
-
 });

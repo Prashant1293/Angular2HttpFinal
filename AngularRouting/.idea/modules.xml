@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/AngularRouting.iml" filepath="$PROJECT_DIR$/.idea/AngularRouting.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/angular2-assignment.iml" filepath="$PROJECT_DIR$/.idea/angular2-assignment.iml" />
->>>>>>> Final Commit
     </modules>
   </component>
 </project>

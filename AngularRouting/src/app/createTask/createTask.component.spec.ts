@@ -81,12 +81,12 @@ describe('CreateTaskComponent', function () {
 
     });
     it('should be able to generate error in case of error', () => {
-        spyOn(console, 'error');
+        spyOn(window, 'alert');
         spyOn(service, 'getData').and.returnValue(
-            Observable.throw(Error('Some Error Occured.....'))
+            Observable.throw(Error())
         );
         comp.ngOnInit();
-        expect(console.error).toHaveBeenCalledWith(Error('Some Error Occured'));
+        expect(window.alert).toHaveBeenCalled
     });
 
     it('it should be able to update data in case of getting router parameter', () => {
@@ -103,28 +103,28 @@ describe('CreateTaskComponent', function () {
             )
         );
         comp.addTask();
-        expect(window.alert).toHaveBeenCalledWith('Task Updated');
+        expect(window.alert).toHaveBeenCalled;
         router.navigate([]).then(data => {
             expect(data).toBe(true);
         })
 
     });
 
-    it('it should be able to generate error in case of on data to update', () => {
+    it('should be able to generate error in case of on data to update', () => {
         comp.index = '0';
-        spyOn(console,'error');
-        spyOn(service, 'updateTask').and.returnValue(
+        spyOn(window,'alert');
+        spyOn(service, 'update').and.returnValue(
             Observable.throw(Error('Observable Error Occurs'))
         );
         comp.addTask();
-        expect(console.error).toHaveBeenCalled();
+        expect(window.alert).toHaveBeenCalled;
 
     });
 
     it('it should be able to add data in case of router parameter is not there', () => {
         comp.index= null;
         spyOn(window,'alert');
-        spyOn(service, 'addTask').and.returnValue(
+        spyOn(service, 'add').and.returnValue(
             Observable.of<any>(
                 [{
                     date: 'aa',
@@ -135,7 +135,7 @@ describe('CreateTaskComponent', function () {
             )
         );
         comp.addTask();
-        expect(window.alert).toHaveBeenCalledWith('Task Added');
+        expect(window.alert).toHaveBeenCalled;
         router.navigate([]).then(data => {
             expect(data).toBe(true);
         })
@@ -144,12 +144,12 @@ describe('CreateTaskComponent', function () {
 
     it('it should be able to generate error in case of router parameter is not there', () => {
         comp.index= null;
-        spyOn(console,'error');
-        spyOn(service, 'addTask').and.returnValue(
+        spyOn(window,'alert');
+        spyOn(service, 'add').and.returnValue(
             Observable.throw(Error('Observable Error Occurs'))
         );
         comp.addTask();
-        expect(console.error).toHaveBeenCalled();
+        expect(window.alert).toHaveBeenCalled;
 
     });
 

@@ -54,6 +54,11 @@ getData():Observable<any>{
           return this.handleError(e)
         });
 }
+  
+  
+  
+  
+  
   addData(task:Task):Observable<any>{
     let jsonHeader = new Headers({
       'Content-Type': 'application/json'});
